@@ -1,40 +1,10 @@
 import { Component } from "react"
-import { Cell } from "./components/Cell"
 import { connect } from "react-redux"
-import { PLAYER, PLAYER_SIGN } from "../../constants"
+import { PLAYER_SIGN } from "../../constants"
 import { fillCell } from "../../actions/fillCell"
 import { checkWin, checkEmptyCell } from "../../utils"
 
 export class FieldContainer extends Component {
-	// constructor(props) {
-	// 	super(props)
-	// 	this.handleClick = props.handleClick
-	// 	this.winner = props.winner
-	// 	this.player = props.player
-	// 	this.status = props.status
-	// 	console.log(this.status)
-
-	// }
-	// handleClick(index) {
-	// 	if (
-	// 		this.status === "WIN" ||
-	// 		this.status === "DRAW" ||
-	// 		this.content !== PLAYER.NOBODY
-	// 	) {
-	// 		return
-	// 	}
-	// 	dispatch(fillCell(index))
-	// 	const newField = [...this.field]
-	// 	newField[index] = this.player
-
-	// 	if (checkWin(newField, this.player)) {
-	// 		dispatch({ type: "SET_WINNER", payload: this.player })
-	// 		dispatch({ type: "SET_STATUS", payload: "WIN" })
-	// 		return
-	// 	} else if (!checkEmptyCell(newField)) {
-	// 		dispatch({ type: "SET_STATUS", payload: "DRAW" })
-	// 	}
-	// }
 	render() {
 		console.log("rendering field...")
 		return (
@@ -47,14 +17,8 @@ export class FieldContainer extends Component {
 							key={index}
 							className="w-20 h-20 bg-slate-200 rounded-md hover:bg-slate-400"
 							onClick={() => {
-								// console.log(this.player)
-								// console.log(this.props.player)
 								this.props.handleClick(index, this.props)
 							}}
-							// onClick={() => {
-
-							// }
-							// onClick={() => this.handleClick(index)}
 						>
 							{PLAYER_SIGN[cell]}
 						</button>
