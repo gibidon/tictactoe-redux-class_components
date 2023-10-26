@@ -1,6 +1,6 @@
 import { Component } from "react"
 import { connect } from "react-redux"
-import { PLAYER_SIGN } from "../../constants"
+import { PLAYER, PLAYER_SIGN } from "../../constants"
 import { fillCell } from "../../actions/fillCell"
 import { checkWin, checkEmptyCell } from "../../utils"
 
@@ -17,7 +17,10 @@ export class FieldContainer extends Component {
               key={index}
               className="w-20 h-20 bg-slate-200 rounded-md hover:bg-slate-400 font-medium text-xl"
               onClick={() => {
-                this.props.handleClick(index, this.props)
+                //check if field is empty
+                if (cell === PLAYER.NOBODY) {
+                  this.props.handleClick(index, this.props)
+                }
               }}
             >
               {PLAYER_SIGN[cell]}
@@ -38,7 +41,7 @@ const mapStateToProps = (state) => ({
 })
 const mapDispatchToProps = (dispatch) => ({
   handleClick: (index, props) => {
-    console.log("handleClick mock..", index)
+    console.log(index)
     console.log(props)
     if (props.status === "WIN" || props.status === "DRAW") {
       return
