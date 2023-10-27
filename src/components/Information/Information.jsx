@@ -4,6 +4,7 @@ import { PLAYER_NAME } from "../../constants"
 
 export class InformationContainer extends Component {
   render() {
+    // console.log("props in information render", this.props)
     return (
       <div className="text-center bg-slate-50 max-w-md mx-auto border-2 border-rose-600 rounded-lg">
         <div>
