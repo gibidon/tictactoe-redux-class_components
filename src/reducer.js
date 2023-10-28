@@ -13,7 +13,7 @@ const gameReducer = (state = initialState, action) => {
   switch (action.type) {
     case "SET_WINNER":
       return { ...state, winner: action.payload }
-    case "RESET":
+    case "RESET_GAME":
       return { ...state, ...initialState }
     case "SET_STATUS":
       return { ...state, status: action.payload }
