@@ -3,8 +3,15 @@ import { connect } from "react-redux"
 import { PLAYER_NAME } from "../../constants"
 
 export class InformationContainer extends Component {
+  // constructor(props) {
+  //   console.log("constructor working..")
+  //   super(props)
+  //   this.name = props.name
+  //   console.log("name in Information", props.name)
+  // }
+
   render() {
-    // console.log("props in information render", this.props)
+    // console.log("props in render", this.props)
     return (
       <div className="text-center bg-slate-50 max-w-md mx-auto border-2 border-rose-600 rounded-lg">
         <div>

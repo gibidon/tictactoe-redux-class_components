@@ -6,7 +6,7 @@ export class Game extends Component {
     return (
       <div className="container sm mx-auto px-4 ">
         <Field />
-        <Information name={"Igor"} />
+        <Information name="Igor" />
       </div>
     )
   }
